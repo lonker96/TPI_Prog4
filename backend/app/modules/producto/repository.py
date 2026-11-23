@@ -20,7 +20,7 @@ class ProductoRepository(BaseRepository[Producto]):
     ) -> Tuple[int, List[Producto]]:
         conditions = []
         if solo_activos:
-            conditions.append(Producto.activo == True)  # noqa: E712
+            conditions.append(Producto.activo == True)  
         if search and search.strip():
             conditions.append(Producto.nombre.ilike(f"%{search.strip()}%"))
         if categoria_id is not None:

@@ -15,7 +15,7 @@ class CategoriaRepository(BaseRepository[Categoria]):
     def get_all_activas(self) -> List[Categoria]:
         statement = (
             select(Categoria)
-            .where(Categoria.activo == True)  # noqa: E712
+            .where(Categoria.activo == True) 
             .order_by(Categoria.id)
         )
         return list(self.session.exec(statement).all())

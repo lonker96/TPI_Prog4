@@ -85,7 +85,7 @@ class PedidoService:
 
             now = datetime.now(timezone.utc)
             pedido = Pedido(
-                usuario_id=usuario.id,  # type: ignore[arg-type]
+                usuario_id=usuario.id,  
                 estado="PENDIENTE",
                 forma_pago=data.forma_pago,
                 direccion_entrega=direccion,
@@ -120,8 +120,8 @@ class PedidoService:
 
                 subtotal = float(producto.precio_base) * item.cantidad
                 detalle = DetallePedido(
-                    pedido_id=pedido.id,  # type: ignore[arg-type]
-                    producto_id=producto.id,  # type: ignore[arg-type]
+                    pedido_id=pedido.id,  
+                    producto_id=producto.id,  
                     cantidad=item.cantidad,
                     nombre_producto=producto.nombre,
                     precio_unitario=float(producto.precio_base),
@@ -153,7 +153,7 @@ class PedidoService:
                 )
             else:
                 total, items = uow.pedidos.list_by_usuario(
-                    usuario_id=usuario.id,  # type: ignore[arg-type]
+                    usuario_id=usuario.id,  
                     estado=estado,
                     skip=skip,
                     limit=limit,

@@ -5,5 +5,5 @@ export interface UsuarioAuth {
   email: string;
   celular?: string | null;
   deleted_at?: string | null;
-  roles: string[]; // Arreglo con los nombres de los roles vigentes (ej. ["user"], ["admin"])
+  roles: string[]; 
 }
