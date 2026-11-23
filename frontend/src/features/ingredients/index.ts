@@ -1,0 +1,1 @@
+export {default as IngredientesPage} from "./pages/IngredientesPages";
